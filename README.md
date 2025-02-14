@@ -1,16 +1,16 @@
-# 🦷 Teeth Classification using CNN
+# 🦷 Teeth Classification using Pre-Trained CNNs
 
-This project implements a **Convolutional Neural Network (CNN)** for **teeth classification**, trained on a dataset of dental images. The model is built using **TensorFlow** and includes **data preprocessing, augmentation, training, evaluation, and prediction**.
+This project implements **Teeth Classification** using **pre-trained models** like **EfficientNet** and **DenseNet121** for better accuracy and performance. The model is fine-tuned on a dataset of dental images and deployed using **Streamlit** for real-time classification.
 
 ---
 
-## 📌 Project Overview
+## 📈 Project Overview
 
-✅ **Preprocessing & Augmentation**: Images are normalized and augmented to improve model performance.  
-✅ **CNN Model**: A deep convolutional neural network with **batch normalization & dropout** for better generalization.  
-✅ **Training & Evaluation**: Trained for **30 epochs**, with validation and performance tracking.  
-✅ **Prediction**: Allows classification of new images using the trained model.  
-✅ **Visualization**: Displays **original & augmented images** for better understanding.  
+✅ **Preprocessing & Augmentation**: Normalizes images and applies **rotation, zoom, and flipping** for better generalization.  
+✅ **Fine-Tuned CNN Model**: Uses **DenseNet121** (or EfficientNet) as a **feature extractor**, with custom classification layers.  
+✅ **Training & Evaluation**: Fine-tuned for **better accuracy**, monitored using **precision, recall, and confusion matrix**.  
+✅ **Streamlit Deployment**: Allows **real-time classification** of new images via a web app.  
+✅ **Visualization**: Displays **original & augmented images**, and model performance graphs.  
 
 ---
 
@@ -20,24 +20,24 @@ This project implements a **Convolutional Neural Network (CNN)** for **teeth cla
 ```sh
 git clone https://github.com/your-repo/teeth-classification.git
 cd teeth-classification
-pip install tensorflow numpy matplotlib
+pip install tensorflow numpy matplotlib streamlit
 ```
 
 ### **2. Prepare the Dataset**
-Ensure you have the dataset in the following structure:
+Ensure your dataset follows this structure:
 ```
 Teeth_Dataset/
     Training/
-        Class1/
-        Class2/
-        ...
+        CaS/
+        CoS/
+        Gum/
+        MC/
+        OC/
+        OLP/
+        OT/
     Validation/
-        Class1/
-        Class2/
         ...
     Testing/
-        Class1/
-        Class2/
         ...
 ```
 
@@ -45,21 +45,39 @@ Teeth_Dataset/
 
 ## 📊 Usage
 
-### **1. Training the Model**
-Run the `model.ipynb` notebook to preprocess the data, build the model, and train it.
+### **1. Train the Model**
+Run the **`Pre-Trained-Model.ipynb`** notebook to:
+- Load **DenseNet121** or **EfficientNet**  
+- Freeze layers & add new classification layers  
+- Fine-tune the model on **Teeth_Dataset**  
+- Evaluate using **precision, recall, and confusion matrix**  
 
-### **2. Evaluating the Model**
-After training, the model's performance on the validation set will be displayed.
+### **2. Deploy the Streamlit App**
+Run the Streamlit web app to classify new teeth images:
+```sh
+streamlit run app.py
+```
+This allows users to **upload an image** and get a **real-time prediction** with confidence scores.
 
-### **3. Making Predictions**
-Use the trained model to classify new images. Example code is provided in the `model.ipynb` notebook.
+---
 
-### **4. Visualizing Images Before and After Augmentation**
-![alt text](image.png)
+## 📈 Model Performance
+- The **fine-tuned DenseNet121 model** achieves **higher accuracy** and **generalizes well**.
+- **Confusion Matrix & Precision-Recall Curves** help analyze misclassifications.
 
 ---
 
 ## 📈 Results
-The model achieves a validation accuracy of approximately 85% after 30 epochs of training.
+The model achieves:
+✅ **High Validation Accuracy** (~85%)  
+✅ **Improved Recall & Precision** using fine-tuning  
+✅ **Optimized Inference Speed** in Streamlit  
+
+---
+
+## 📈 Future Improvements
+🚀 Train on a **larger dataset**  
+🚀 Experiment with **ViT (Vision Transformers)**  
+🚀 Add **explainability features (Grad-CAM)**  
 
 ---
