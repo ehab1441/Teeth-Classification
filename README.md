@@ -47,7 +47,7 @@ Teeth_Dataset/
 
 ### **1. Train the Model**
 Run the **`Pre-Trained-Model.ipynb`** notebook to:
-- Load **DenseNet121** or **EfficientNet**  
+- Load **DenseNet121** 
 - Freeze layers & add new classification layers  
 - Fine-tune the model on **Teeth_Dataset**  
 - Evaluate using **precision, recall, and confusion matrix**  
@@ -62,7 +62,7 @@ This allows users to **upload an image** and get a **real-time prediction** with
 ---
 
 ## 📈 Model Performance
-- The **fine-tuned DenseNet121 model** achieves **higher accuracy** and **generalizes well**.
+- The **fine-tuned DenseNet121 model** achieves **good accuracy**
 - **Confusion Matrix & Precision-Recall Curves** help analyze misclassifications.
 
 ---
@@ -72,12 +72,5 @@ The model achieves:
 ✅ **High Validation Accuracy** (~85%)  
 ✅ **Improved Recall & Precision** using fine-tuning  
 ✅ **Optimized Inference Speed** in Streamlit  
-
----
-
-## 📈 Future Improvements
-🚀 Train on a **larger dataset**  
-🚀 Experiment with **ViT (Vision Transformers)**  
-🚀 Add **explainability features (Grad-CAM)**  
 
 ---
